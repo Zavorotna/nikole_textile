@@ -23,24 +23,26 @@ html(lang="uk")
             section.about_us.container
                 h2 Про нас
                 .wrapper
-                    .row.grid
+                    .row.flex-between
                         div.text_container.flex
                             h3 Ласкаво просимо в інтернет магазин 'Nikol textil". 
                             p Ми створюємо комфорт і затишок у вашій оселі. Раді вітати Вас в нашому магазині домашнього текстилю "Nikol textil". Все що ми робимо-для людей і з думкою про людей.
                             p Рушники різних розмірів і моделей, покривала, пледи, махрові простині, скатертини, серветки-все це речі, які просто необхідні в кожній оселі для створення чудового настрою і комфорту. Це речі, до яких ми звикли і навіть не помічаємо, наскільки вони необхідні і важливі. Від таких дрібничок залежить в якій мірі комфортним, зручним і прекрасним буде наше життя. Саме тому наше бажання і мета-зробити життя кожного нашого клієнта ще комфортнішим, ще затишнішим і ще яскравішим. 
-                        div.span_2
-                            picture 
-                                img(src="img/about_1.jpg", alt="" loading="lazy")
-                        div.span_1
-                            picture 
-                                img(src="img/about_2.jpg", alt="" loading="lazy")
-                    .row-reverse.grid
-                        div.span_1
-                            picture 
-                                img(src="img/about_3.jpg", alt="" loading="lazy")
-                        div.span_2
-                            picture 
-                                img(src="img/about_4.jpg", alt="" loading="lazy")
+                        .flex
+                            div.span_2
+                                picture 
+                                    img(src="img/about_1.jpg", alt="" loading="lazy")
+                            div.span_1
+                                picture 
+                                    img(src="img/about_2.jpg", alt="" loading="lazy")
+                    .row-reverse.flex-between
+                        .flex
+                            div.span_1
+                                picture 
+                                    img(src="img/about_3.jpg", alt="" loading="lazy")
+                            div.span_2
+                                picture 
+                                    img(src="img/about_4.jpg", alt="" loading="lazy")
                         div.text_container.flex
                             h3 Ласкаво просимо в інтернет магазин 'Nikol textil". 
                             p Ми створюємо комфорт і затишок у вашій оселі. Раді вітати Вас в нашому магазині домашнього текстилю "Nikol textil". Все що ми робимо-для людей і з думкою про людей.
@@ -48,7 +50,7 @@ html(lang="uk")
             section.catalog.wrapper.container#catalog
                 h2 Каталог
                 .grid.col-4.catalog_container
-            section.reviews_container.container.gray_bg
+            section.reviews_container.container.gray_bg#reviews
                 .wrapper
                     h2 Відгуки
                     .grid.col-6.reviews_list
