@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextReviews.forEach(reviews => {
             const picture = document.createElement('picture'),
                 img = document.createElement('img')
-            img.src = '../img/reviews/' + `${reviews.src}` + '.jpg'
+            img.src = 'img/reviews/' + `${reviews.src}` + '.jpg'
             img.alt = `${reviews.alt}`
             img.setAttribute('loading', 'lazy')
             picture.appendChild(img)
