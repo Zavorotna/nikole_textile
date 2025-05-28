@@ -1,0 +1,69 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        link(rel="stylesheet", href="css/styles.css")
+        title Nikol Textile - пледи, покривала та рушники 
+    body 
+        .dark-bgc
+        .dark-bgc-succes
+        include components/succes
+        include components/privacy
+        include components/cart
+        include components/header 
+        main 
+            section.gray_bg.main_section.container
+                h2 Чому варто купувати саме у нас:
+                .wrapper.grid.col-4 
+                    include components/perevagi
+            section.about_us.container
+                h2 Про нас
+                .wrapper
+                    .row.grid
+                        div.text_container.flex
+                            h3 Ласкаво просимо в інтернет магазин 'Nikol textil". 
+                            p Ми створюємо комфорт і затишок у вашій оселі. Раді вітати Вас в нашому магазині домашнього текстилю "Nikol textil". Все що ми робимо-для людей і з думкою про людей.
+                            p Рушники різних розмірів і моделей, покривала, пледи, махрові простині, скатертини, серветки-все це речі, які просто необхідні в кожній оселі для створення чудового настрою і комфорту. Це речі, до яких ми звикли і навіть не помічаємо, наскільки вони необхідні і важливі. Від таких дрібничок залежить в якій мірі комфортним, зручним і прекрасним буде наше життя. Саме тому наше бажання і мета-зробити життя кожного нашого клієнта ще комфортнішим, ще затишнішим і ще яскравішим. 
+                        div.span_2
+                            picture 
+                                img(src="img/about_1.jpg", alt="" loading="lazy")
+                        div.span_1
+                            picture 
+                                img(src="img/about_2.jpg", alt="" loading="lazy")
+                    .row-reverse.grid
+                        div.span_1
+                            picture 
+                                img(src="img/about_3.jpg", alt="" loading="lazy")
+                        div.span_2
+                            picture 
+                                img(src="img/about_4.jpg", alt="" loading="lazy")
+                        div.text_container.flex
+                            h3 Ласкаво просимо в інтернет магазин 'Nikol textil". 
+                            p Ми створюємо комфорт і затишок у вашій оселі. Раді вітати Вас в нашому магазині домашнього текстилю "Nikol textil". Все що ми робимо-для людей і з думкою про людей.
+                            p Рушники різних розмірів і моделей, покривала, пледи, махрові простині, скатертини, серветки-все це речі, які просто необхідні в кожній оселі для створення чудового настрою і комфорту. Це речі, до яких ми звикли і навіть не помічаємо, наскільки вони необхідні і важливі. Від таких дрібничок залежить в якій мірі комфортним, зручним і прекрасним буде наше життя. Саме тому наше бажання і мета-зробити життя кожного нашого клієнта ще комфортнішим, ще затишнішим і ще яскравішим. 
+            section.catalog.wrapper.container#catalog
+                h2 Каталог
+                .grid.col-4.catalog_container
+            section.reviews_container.container.gray_bg
+                .wrapper
+                    h2 Відгуки
+                    .grid.col-6.reviews_list
+                    .btn_container.flex
+                        a(href="#")#show-more-btn.cta.transparent_cta.show-more-btn.items-center
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.4082 4.23333C11.6832 4.01667 10.8832 3.875 9.9999 3.875C6.00824 3.875 2.7749 7.10833 2.7749 11.1C2.7749 15.1 6.00824 18.3333 9.9999 18.3333C13.9916 18.3333 17.2249 15.1 17.2249 11.1083C17.2249 9.625 16.7749 8.24167 16.0082 7.09167" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.4415 4.43317L11.0332 1.6665" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.4416 4.43311L10.6333 6.48311" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            | показати ще відгуки
+            section.info_container.wrapper.container#info
+                h2 Інформація
+                include components/information
+            section.wrapper.container
+                include components/more_info
+        include components/footer
+        script(src="js/scripts.js") 

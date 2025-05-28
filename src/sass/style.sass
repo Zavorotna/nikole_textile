@@ -1,0 +1,347 @@
+@import components/mixins
+@import components/var
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 0.7px
+    scroll-behavior: smooth
+    +media(1250)
+        font-size: 1px
+    +media(1600)
+        font-size: 1.2px
+
+body
+    font-size: 18rem
+    font-weight: 400
+    font-family: Montserrat
+
+ul
+    list-style: none
+
+a
+    transition: all .5s ease
+    text-decoration: none
+
+h2
+    padding-bottom: 40rem
+    text-align: center
+    font-size: 36px
+    font-weight: 600
+
+input
+    appearance: none
+    width: 100%
+    outline: none
+
+input[type='text'],
+input[type='tel'],
+textarea
+    padding: 12rem 10rem
+    border-radius: 3px
+    border: 1px solid $black
+
+.wrapper
+    width: 95%
+    margin: 0 auto
+    padding: 0 15rem
+    +media(768)
+        width: 90%
+
+.pos-r
+    position: relative
+
+.flex
+    display: flex
+    gap: 20rem
+
+.flex-between
+    display: flex
+    gap: 20rem
+    justify-content: space-between
+
+.grid
+    display: grid
+    gap: 20rem
+
+.items-center
+    align-items: center
+
+img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: center
+
+.cta
+    display: block
+    width: 90%
+    max-width: 237px
+    padding: 19rem 60rem
+    text-align: center
+    font-size: 18px
+    font-weight: 500
+    line-height: normal
+    transition: all .5 ease
+    &:hover
+        transform: scale(1.05)
+    +media(768)
+        width: 45%
+
+.order_container
+    display: none
+
+@import components/header
+@import components/card
+@import components/cart
+
+.main_section
+    margin-bottom: 13px
+
+.main_container
+    position: relative
+    flex-direction: column
+    padding: 100rem 0 20vh
+    color: $white
+    gap: 50px
+    text-align: center
+    z-index: 2
+    h1
+        font-size: 48rem
+        font-style: normal
+        font-weight: 700
+        text-transform: uppercase
+    p
+        font-size: 30rem
+        font-weight: 500
+
+.cta_main
+    flex-wrap: wrap
+    justify-content: center
+    +media(768)
+        width: 50%
+        margin: 0 auto
+
+.catalog_cta
+    color: $black
+    background-color: #33C364
+    border-radius: 50px
+    &:hover
+        background-color: $gray
+
+.transparent_cta
+    color: $white
+    border-radius: 50px
+    border: 2px solid #33C364
+    background: rgba(255, 255, 255, 0.20)
+    &:hover
+        color: $black
+        background-color: $white
+
+.dark-mask
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.40) linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%)
+    z-index: 1
+
+.slider-images
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    img
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0
+        border-radius: 5px 5px 0 0
+        transition: all .5s ease
+        object-position: top
+    .slider-img
+        opacity: 1
+    img.active
+        opacity: 1
+.col-2
+    +media(768)
+        grid-template-columns: repeat(2, 1fr)
+.col-3
+    +media(538)
+        grid-template-columns: repeat(3, 1fr)
+
+.col-4
+    grid-template-columns: repeat(2, 1fr)
+    +media(768)
+        grid-template-columns: repeat(4, 1fr)
+.col-6 
+    grid-template-columns: repeat(2, 1fr)
+    +media(475)
+        grid-template-columns: repeat(3, 1fr)
+    +media(768)
+        grid-template-columns: repeat(4, 1fr)
+    +media(1440)
+        grid-template-columns: repeat(6, 1fr)
+.container
+    padding: 70rem 0
+
+.gray_bg
+    background-color: #F3F3F3
+
+.perevagi_container
+    p
+        font-size: 18px
+        font-weight: 600
+        +media(768)
+            justify-content: center
+
+.row,
+.row-reverse
+    picture
+        display: block
+        width: 100%
+        height: 100%
+        img
+            border-radius: 15px
+.row
+    grid-template-columns: 57% 25% 15%
+    padding-bottom: 30px
+
+.text_container
+    flex-direction: column
+    justify-content: center
+
+.row-reverse 
+    grid-template-columns: 15% 25% 57%
+
+.catalog
+    .col-4
+        grid-template-columns: repeat(2, 1fr)
+        +media(768)
+            grid-template-columns: repeat(3, 1fr)
+        +media(1150)
+            grid-template-columns: repeat(4, 1fr)
+.card 
+    width: 42vw
+    +media(768)
+        width: auto
+
+.submit-btn
+    padding: 12rem 20rem
+    color: $white
+    border-radius: 3px
+    border: 1px solid $black
+    background: $black
+    transition: all .5s ease
+    cursor: pointer
+    text-transform: uppercase
+    &:hover
+        color: $black
+        background-color: $white
+   
+.error-name,
+.error-tel
+    position: absolute
+    bottom: -15px
+    left: 0
+    font-size: 12px
+    color: #EB4242
+.reviews_container 
+    picture
+        display: block
+        min-height: 330rem
+        background-color: #fff
+        border-radius: 20px
+        img
+            object-fit: contain
+.btn_container
+    padding-top: 40rem
+    justify-content: center
+
+.show-more-btn 
+    display: flex
+    gap: 7px
+    justify-content: center
+    color: $black
+    max-width: 300px 
+    padding: 19px 30px
+
+@import components/info
+
+.more_info_container
+    margin-bottom: 30px
+    gap: 20px
+    border-radius: 20px
+    .text_container
+        padding: 0 100rem 0 30rem
+    > div
+        max-height: 400rem
+    img
+        object-position: bottom
+        border-radius: 20px
+        
+.successPopup
+    display: none
+    text-align: center
+    h2
+        padding-top: 30rem
+        padding-bottom: 10rem
+    img
+        max-width: 120px
+        max-height: 120px
+    .cta
+        font-size: 18rem
+        padding: 19rem
+
+.privacy_container,
+.successPopup
+    position: fixed
+    padding: 30rem
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 20
+    background-color: #fff
+
+.privacy_container
+    display: none
+    width: 90vw
+    height: 80vh
+    overflow: auto
+    box-sizing: border-box
+    +media(1024)
+        width: 70vw
+        height: 50vw
+    &::-webkit-scrollbar 
+        width: 8rem
+        height: 100%
+        border-radius: 3rem
+        background-color: #ccc
+
+    &::-webkit-scrollbar-thumb 
+        border-radius: 3rem
+        background-color: $black
+    h1
+        padding-bottom: 30rem
+        text-align: center
+        font-size: 30rem
+        font-weight: 700
+        text-transform: uppercase
+    div, ul
+        margin-bottom: 20rem
+
+.cancel_popup
+    position: absolute
+    top: 20rem
+    right: 20rem
+    +media(768)
+        top: 30rem
+        right: 30rem
+
+        
+@import components/footer
