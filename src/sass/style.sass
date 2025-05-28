@@ -88,8 +88,6 @@ img
     font-weight: 500
     line-height: normal
     transition: all .5 ease
-    &:hover
-        transform: scale(1.05)
     +media(768)
         width: 45%
 
@@ -132,16 +130,23 @@ img
     background-color: #33C364
     border-radius: 50px
     &:hover
-        background-color: $gray
+        color: #fff
 
 .transparent_cta
     color: $white
     border-radius: 50px
     border: 2px solid #33C364
     background: rgba(255, 255, 255, 0.20)
+    svg
+        path 
+            stroke: #121212
+            transition: all .5s ease
     &:hover
-        color: $black
-        background-color: $white
+        color: #fff
+        background-color: #33C364
+        svg
+            path
+                stroke: #fff
 
 .dark-mask
     position: absolute

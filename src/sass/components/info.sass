@@ -4,23 +4,33 @@
         width: 70vw
         margin: 0 auto
 
+.info-item,
+.readmore,
+.readmore-active
+    border-radius: 40px
+
 .info-item
     margin-bottom: 20rem
-    border-radius: 40px
 
 .readmore
     position: relative
-    padding: 20rem 30rem
+    padding: 20px 30rem
     color: $black
     span
         &:first-child
             font-size: 24rem
             font-weight: 600
-.readmore-active
-    border-radius: 5px 5px 0 0
-    .svg_btn 
+    svg
+        path 
+            transition: all .5s ease
+    &:hover
         svg
-            transform: translate(-50%, -50%) rotate(-180deg)
+            path 
+                fill: #fff
+.readmore-active
+    .svg_btn 
+        .plus_svg
+            display: none
 
 .head_info
     padding-bottom: 5px

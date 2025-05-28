@@ -55,24 +55,14 @@ header
         +media(1024)
             padding-bottom: 0
     a
-        position: relative
         display: block
         line-height: 2em
         color: $black
         +media(1024)
             font-size: 16rem
             font-weight: 500
-        &::before
-            content: ""
-            position: absolute
-            left: 0
-            bottom: 0
-            width: 0
-            height: 1px
-            background-color: $black
-            transition: all .5s ease
         &:hover
-            text-shadow: 0 0 1px
+            color: #33C364
             &::before
                 width: 100%
 
@@ -152,7 +142,9 @@ a.cancel
     svg
         rect 
             fill: #33C364
+        path 
+            fill: #121212
             transition: all .5s ease
         &:hover
-            rect 
-                fill: #1d7f3e
+            path 
+                fill: #fff
