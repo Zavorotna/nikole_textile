@@ -181,32 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hideAllSections()
     deactivateAllButtons()
 
-    // //spivpracia popup
-    // const spivpraciaBtn = document.querySelectorAll(".spivpracia_btn"),
-    //     popupSpivpracia = document.querySelector(".spivpracia_popup"),
-    //     cancelSpevpr = document.querySelector(".cancel_spivpracia"),
-    //     darkBg = document.querySelector(".dark-bgc")
-
-    // spivpraciaBtn.forEach(item => {
-    //     item.addEventListener("click", function (e) {
-    //         e.preventDefault()
-    //         popupSpivpracia.style.display = "block"
-    //         darkBg.style.display = "block"
-    //     })
-    // })
-
-    // function cancelPopup(e) {
-    //     e.preventDefault()
-    //     popupSpivpracia.style.display = "none"
-    //     succesPopup.style.display = "none"
-    //     darkBg.style.display = "none"
-    //     darkSucces.style.display = "none"
-    // }
-
-    // cancelSpevpr.addEventListener("click", cancelPopup)
-    // darkBg.addEventListener("click", cancelPopup)
-    // darkSucces.addEventListener("click", cancelPopup)
-
     //succes popup
     succesPopup.style.transition = "opacity 0.5s ease"
     succesPopup.style.opacity = "0"

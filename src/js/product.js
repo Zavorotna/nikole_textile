@@ -129,9 +129,6 @@
 //     darkBg = document.querySelector(".dark-bgc"),
 //     cartContainer = document.querySelector(".order_container"),
 //     errorCart = document.querySelector(".error_cart")
-// document.querySelector("#orderWebsiteURL").value = window.location
-// document.querySelector("#orderWebsiteURL1").value = window.location
-// document.querySelector("#orderWebsiteURL2").value = window.location
 // function openCart() {
 //     cartPopup.style.display = "block"
 //     darkBg.style.display = "block"
@@ -198,113 +195,113 @@
 // })
 
 
-// //перевірка відправки форми для телефону і імені
-// const inputField = document.querySelectorAll('name'),
-//     maxLength = 30,
-//     minLength = 3
+// // //перевірка відправки форми для телефону і імені
+// // const inputField = document.querySelectorAll('name'),
+// //     maxLength = 30,
+// //     minLength = 3
 
-// const phoneInput = document.querySelectorAll('.phoneInput'),
-//     errorName = document.querySelectorAll('.error-name'),
-//     errorTel = document.querySelectorAll('.error-tel')
-// phoneInput.forEach(item => {
-//     item.addEventListener('input', function () {
-//         let phoneNumber = item.value.trim()
-//         const mask = "+380"
+// // const phoneInput = document.querySelectorAll('.phoneInput'),
+// //     errorName = document.querySelectorAll('.error-name'),
+// //     errorTel = document.querySelectorAll('.error-tel')
+// // phoneInput.forEach(item => {
+// //     item.addEventListener('input', function () {
+// //         let phoneNumber = item.value.trim()
+// //         const mask = "+380"
     
-//         if (!phoneNumber.startsWith(mask)) {
-//             phoneNumber = mask + phoneNumber
-//         }
+// //         if (!phoneNumber.startsWith(mask)) {
+// //             phoneNumber = mask + phoneNumber
+// //         }
     
-//         let cleanedValue = phoneNumber.replace(/[^\d+]/g, "")
+// //         let cleanedValue = phoneNumber.replace(/[^\d+]/g, "")
     
-//         if (cleanedValue.length > 13) {
-//             cleanedValue = cleanedValue.slice(0, 13)
-//         }
+// //         if (cleanedValue.length > 13) {
+// //             cleanedValue = cleanedValue.slice(0, 13)
+// //         }
     
-//         const validInput = isValidPhoneNumber(cleanedValue)
+// //         const validInput = isValidPhoneNumber(cleanedValue)
     
-//         if (validInput && cleanedValue.length === 13) {
-//             item.style.borderColor = 'green'
-//             item.style.color = '#121212'
+// //         if (validInput && cleanedValue.length === 13) {
+// //             item.style.borderColor = 'green'
+// //             item.style.color = '#121212'
 
-//             errorTel.forEach(item => { 
-//                 item.innerText = ""
-//             })
-//         } else {
-//             item.style.borderColor = '#EB4242'
-//             item.style.color = '#EB4242'
-//             errorTel.forEach(item => { 
-//                 item.innerText = "Введіть коректний номер телефону"
-//             })
-//         }
-//     })
-// })
+// //             errorTel.forEach(item => { 
+// //                 item.innerText = ""
+// //             })
+// //         } else {
+// //             item.style.borderColor = '#EB4242'
+// //             item.style.color = '#EB4242'
+// //             errorTel.forEach(item => { 
+// //                 item.innerText = "Введіть коректний номер телефону"
+// //             })
+// //         }
+// //     })
+// // })
 
-// function validateForm(form) {
-//     const phoneInput = form.querySelector("input[name='userPhone']"),
-//         phoneNumber = phoneInput.value.trim()
+// // function validateForm(form) {
+// //     const phoneInput = form.querySelector("input[name='userPhone']"),
+// //         phoneNumber = phoneInput.value.trim()
 
-//     if (!phoneNumber || !isValidPhoneNumber(phoneNumber) || phoneNumber.length < 13) {
-//         errorTel.forEach(item => { 
-//             item.innerText =  "Введіть коректний номер телефону"
-//         })
-//         return false
-//     }
+// //     if (!phoneNumber || !isValidPhoneNumber(phoneNumber) || phoneNumber.length < 13) {
+// //         errorTel.forEach(item => { 
+// //             item.innerText =  "Введіть коректний номер телефону"
+// //         })
+// //         return false
+// //     }
     
-//     const inputFields = form.querySelectorAll("input[name='userName']")
-//     for (const inputField of inputFields) {
-//         const userInput = inputField.value.trim()
-//         if (userInput.length < 3) {
-//             errorName.forEach(item => { 
-//                 item.innerText =  'Мінімальна кількість символів для імені: 3'
-//             })
-//             return false
-//         }
-//         if (userInput.length > 30) {
-//             errorName.forEach(item => { 
-//                 item.innerText =  'Максимальна кількість символів для імені: 30'
-//             })
-//             return false
-//         }
-//     }
-//     return true
-// }
+// //     const inputFields = form.querySelectorAll("input[name='userName']")
+// //     for (const inputField of inputFields) {
+// //         const userInput = inputField.value.trim()
+// //         if (userInput.length < 3) {
+// //             errorName.forEach(item => { 
+// //                 item.innerText =  'Мінімальна кількість символів для імені: 3'
+// //             })
+// //             return false
+// //         }
+// //         if (userInput.length > 30) {
+// //             errorName.forEach(item => { 
+// //                 item.innerText =  'Максимальна кількість символів для імені: 30'
+// //             })
+// //             return false
+// //         }
+// //     }
+// //     return true
+// // }
 
-// document.querySelectorAll("form[action='sendorder.php'], form[action='senddata.php'], form[action='sendcontact.php']").forEach(form => {
-//     form.addEventListener("submit", (e) => {
-//         if (!validateForm(form)) {
-//             e.preventDefault()
-//             console.log("+");
-//         }
-//     })
-// })
+// // document.querySelectorAll("form[action='sendorder.php'], form[action='senddata.php'], form[action='sendcontact.php']").forEach(form => {
+// //     form.addEventListener("submit", (e) => {
+// //         if (!validateForm(form)) {
+// //             e.preventDefault()
+// //             console.log("+");
+// //         }
+// //     })
+// // })
 
 
-// function isValidPhoneNumber(phoneNumber) {
-//     return /^\+?(\d{2})?([(]?\d{3}[)]?)\s?[-]?\s?(?:\d{3})\s?[-]?(?:\s?\d{2})\s?[-]?(?:\s?\d{2})$/.test(phoneNumber)
-// }
+// // function isValidPhoneNumber(phoneNumber) {
+// //     return /^\+?(\d{2})?([(]?\d{3}[)]?)\s?[-]?\s?(?:\d{3})\s?[-]?(?:\s?\d{2})\s?[-]?(?:\s?\d{2})$/.test(phoneNumber)
+// // }
 
-// const inputMasks = document.querySelectorAll(".inputMask");
+// // const inputMasks = document.querySelectorAll(".inputMask");
 
-// inputMasks.forEach(function (inputMask) {
-//     inputMask.addEventListener("click", function () {
-//         if (!inputMask.value) {
-//             inputMask.value = "+380";
-//         }
-//     });
+// // inputMasks.forEach(function (inputMask) {
+// //     inputMask.addEventListener("click", function () {
+// //         if (!inputMask.value) {
+// //             inputMask.value = "+380";
+// //         }
+// //     });
 
-//     inputMask.addEventListener("input", function () {
-//         let inputValue = inputMask.value;
-//         let cleanedValue = inputValue.replace(/[^\d+]/g, "");
+// //     inputMask.addEventListener("input", function () {
+// //         let inputValue = inputMask.value;
+// //         let cleanedValue = inputValue.replace(/[^\d+]/g, "");
 
-//         inputMask.value = cleanedValue;
+// //         inputMask.value = cleanedValue;
 
-//         if (cleanedValue.length > 13) {
-//             inputMask.value = cleanedValue.slice(0, 13);
-//         }
+// //         if (cleanedValue.length > 13) {
+// //             inputMask.value = cleanedValue.slice(0, 13);
+// //         }
 
-//         if (!cleanedValue.startsWith("+380")) {
-//             inputMask.value = "+380" + cleanedValue.slice(3);
-//         }
-//     });
-// });
+// //         if (!cleanedValue.startsWith("+380")) {
+// //             inputMask.value = "+380" + cleanedValue.slice(3);
+// //         }
+// //     });
+// // });
