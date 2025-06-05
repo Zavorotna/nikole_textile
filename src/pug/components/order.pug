@@ -1,0 +1,28 @@
+form.order_container(action="sendorder.php" method="post")
+    h2 Оформлення замовлення
+    input(type="hidden" name="cartData" id="cartData")
+    a.cancel_order(href="#")
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="15" fill="white"/>
+            <path d="M13 1.00005L1 13M0.999949 1L12.9999 13" stroke="#33C364" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    .name
+        label(for='name') Ваше імʼя*
+        input#name(type='text' name='userName' minlength='3' maxlength='30' required)
+        span.errorName
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="10" fill="#E40808"/>
+                <path d="M13 7.00002L7 13M6.99997 7L12.9999 13" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+    .phone
+        label(for='phone') Номер телефону*
+        input.phoneInput.inputMask(type='tel' name='userPhone' required='' maxlength='13')
+        span.error
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="10" fill="#E40808"/>
+                <path d="M13 7.00002L7 13M6.99997 7L12.9999 13" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+    p.message *вкажіть номер телефону на який зареєстрований вайбер
+    .flex.cart_cta  
+        a.cta.transparent_cta.back_catalogue_order(href="#catalog") продовжити покупки
+        button.cta.catalog_cta(type="submit") оформити замовлення

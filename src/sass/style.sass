@@ -38,10 +38,10 @@ input
     outline: none
 
 input[type='text'],
-input[type='tel'],
-textarea
+input[type='tel']
+    font-size: 16px
     padding: 12rem 10rem
-    border-radius: 3px
+    border-radius: 10px
     border: 1px solid $black
 
 .wrapper
@@ -263,14 +263,18 @@ img
         color: $black
         background-color: $white
    
-.error-name,
-.error-tel
+.error,
+.errorName
+    display: none
     position: absolute
-    bottom: -15px
-    left: 0
+    top: 70%
+    right: 15px
+    transform: translateY(-50%)
+.message
+    padding: 10px 0 30px
+    font-style: italic
     font-size: 12px
-    color: #EB4242
-
+    font-weight: 500
 .category_btn_container
     justify-content: center
     padding-bottom: 40rem

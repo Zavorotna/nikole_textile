@@ -6,46 +6,86 @@
         display: flex
         gap: 10px
         justify-content: space-between
-.error_cart
-    flex-direction: column
-    position: absolute
-    top: 60%
-    left: 50%
-    transform: translate(-50%, -50%)
 .phone
     position: relative
-.cart_popup
+    padding-top: 10px
+
+.error_cart
+    flex-direction: column
+    justify-content: center
+.cart_popup,
+.order_container
     position: fixed
     top: 50%
     left: 50%
     display: none
-    padding: 70rem 50rem 120rem
+    padding: 40rem 30rem
     width: 90vw
     background-color: $white
+    border-radius: 20px
     transform: translate(-50%, -50%)
-    z-index: 3
+    z-index: 7
+    .quantity-controls
+        button
+            background-color: #f3f3f3
+    .cart_cta
+        margin: 0 auto
+        justify-content: center
+        +media(1024)
+            flex-wrap: nowrap
+        button
+            border: none
+        .cta 
+            width: 100%
+            padding: 19px 0
+            min-width: 300px
+        .transparent_cta
+            color: #121212
     +media(1024)
-        width: 50vw
-.cancel_cart
+        width: 70vw
+        max-width: 750px
+.cancel_cart,
+.cancel_order
     position: absolute
-    top: 15px
-    right: 15px
-.cart-head
-    padding-bottom: 10rem
-    font-size: 18rem
-    font-weight: 700
-    text-transform: uppercase
+    top: 0
+    right: -35px
+    svg
+        path
+            transform: translate(28%, 28%)
 
 .cart-container
-    grid-template-columns: 1fr 4fr
+    position: relative
+    grid-template-columns: 1fr 2fr 1fr 1fr
+    padding: 15px 20px
+    margin-bottom: 10rem
+    border-radius: 10px
+    background: #F3F3F3
+    img
+        border-radius: 10px 
+    h4
+        font-size: 20rem
+        padding-bottom: 10rem
     p
         padding-bottom: 0
+.cart-details
+    p
+        font-size: 16rem
+        font-weight: 600
+    span
+        font-size: 11px
+        font-weight: 500
+        font-style: italic
+.delete_cta
+    position: absolute
+    top: 10px
+    right: 10px
 
-.color_cart
-    gap: 5px
+.cart-total
+    padding: 20px 0
+    text-align: right
+    font-size: 24rem
+    font-weight: 600
+    span
+        color: #33C364
 
-.color_circle 
-    display: inline-block
-    width: 20rem
-    height: 20rem
-    border-radius: 50%
+

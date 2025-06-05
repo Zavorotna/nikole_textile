@@ -291,6 +291,7 @@ function initProductCards(productsToRender) {
             id: product.id,
             title: product.title,
             size: size.s,
+            inPack: size.inPack,
             quantity: qty,
             pricePerItem: pricePerItem,
             total: qty * pricePerItem,
@@ -456,11 +457,14 @@ document.addEventListener('DOMContentLoaded', () => {
 //cart
 const cartPopup = document.querySelector(".cart_popup"),
     darkBg = document.querySelector(".dark-bgc"),
-    cartContainer = document.querySelector(".order_container"),
+    cartContainer = document.querySelector(".cart_container"),
     errorCart = document.querySelector(".error_cart"),
     cartBtn = document.querySelector(".cart"),
     deleteCta = document.querySelector(".delete_cta"),
-    cancelCart = document.querySelector(".cancel_cart")
+    cancelCart = document.querySelector(".cancel_cart"),
+    orderCancel = document.querySelector(".cancel_order"),
+    backOrderCataloge = document.querySelector(".back_catalogue_order"),
+    orderContainer = document.querySelector(".order_container")
 
 cartBtn.addEventListener("click", function (e) {
     e.preventDefault()
@@ -468,16 +472,21 @@ cartBtn.addEventListener("click", function (e) {
     
 })
 
-cancelCart.addEventListener("click", function (e) {
-    e.preventDefault()
+function cancelPopup() {
     cartPopup.style.display = "none"
     darkBg.style.display = "none"
+    orderContainer.style.display = "none"
+}
+
+cancelCart.addEventListener("click", function (e) {
+    e.preventDefault()
+    cancelPopup()
 })
+
 
 darkBg.addEventListener("click", function (e) {
     e.preventDefault()
-    cartPopup.style.display = "none"
-    darkBg.style.display = "none"
+    cancelPopup()
 })
 
 deleteCta?.addEventListener("click", function (e) {
@@ -489,7 +498,7 @@ deleteCta?.addEventListener("click", function (e) {
 
 
 function renderCartItems() {
-    const cartContainer = document.querySelector(".order_container")
+    const cartContainer = document.querySelector(".cart_container")
     cartContainer.innerHTML = ""
 
     const cartItems = JSON.parse(localStorage.getItem("cart")) || []
@@ -504,29 +513,9 @@ function renderCartItems() {
     cartContainer.style.display = "grid"
 
     cartItems.forEach(item => {
+        console.log(item.total)
         const cartItemHTML = `
-            <div class="cart-container grid col-4" data-id="${item.id}" data-size="${item.size}">
-                <img src="${item.img}" alt="${item.title}" />
-                <div class="cart-details">
-                    <h4>${item.title}</h4>
-                    <p>Розмір: ${item.size}</p>
-                    <div class="quantity-controls">
-                        <a class="decrease-qty">-</a>
-                        <span class="cart-quantity">${item.quantity}</span>
-                        <a class="increase-qty">+</a>
-                    </div>
-                    <p class="cart-price">${item.total.toFixed(2)} грн</p>
-                    <a class="delete_cta" href="#"> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                            <path d="M21.875 6.22967C18.4062 5.88592 14.9167 5.70883 11.4375 5.70883C9.375 5.70883 7.3125 5.813 5.25 6.02133L3.125 6.22967" stroke="#CABABA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8.854 5.17709L9.08317 3.81251C9.24984 2.82293 9.37484 2.08334 11.1353 2.08334H13.8644C15.6248 2.08334 15.7603 2.86459 15.9165 3.82293L16.1457 5.17709" stroke="#CABABA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M19.6361 9.52048L18.959 20.0101C18.8444 21.6455 18.7506 22.9163 15.8444 22.9163H9.1569C6.25065 22.9163 6.1569 21.6455 6.04232 20.0101L5.36523 9.52048" stroke="#CABABA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M10.7607 17.1875H14.2295" stroke="#CABABA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9.896 13.0208H15.1043" stroke="#CABABA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+            <div class="cart-container grid items-center" data-id="${item.id}" data-size="${item.size}"><img src="${item.img}" alt="${item.title}" /><div class="cart-details"><h4>${item.title}</h4><p>Розмір: ${item.size} см</p><span class="label_in_pack">${item.inPack} шт в упаковці</span></div><div class="quantity-controls grid items-center"><button class="decrease-qty">-</button><span class="quantity flex items-center">${item.quantity}</span><button class="increase-qty">+</button></div><p class="cart-price">${item.total.toFixed(2)} грн</p><a class="delete_cta" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 1.00004L1 11M0.999958 1L10.9999 11" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         `
         cartContainer.insertAdjacentHTML("beforeend", cartItemHTML)
     })
@@ -534,11 +523,36 @@ function renderCartItems() {
     const totalSum = cartItems.reduce((sum, item) => sum + item.total, 0),
         totalHTML = `
             <div class="cart-total">
-                <h3>Загальна сума: ${totalSum.toFixed(2)} грн</h3>
+                <h3>до сплати: <span>${totalSum.toFixed(2)}грн</span></h3>
             </div>
         `
+    const buttons = `
+        <div class="flex cart_cta">  
+            <a class="cta transparent_cta back_catalogue" href="#catalog">продовжити покупки</a>
+            <a class="cta catalog_cta get_order" href="#"> оформити замовлення</a>
+        </div>
+    `
     cartContainer.insertAdjacentHTML("beforeend", totalHTML)
+    cartContainer.insertAdjacentHTML("beforeend", buttons)
     addCartItemListeners()
+
+    let getOrder = document.querySelector(".get_order"),
+        backCatalog = document.querySelector(".back_catalogue"),
+        orderContainer = document.querySelector(".order_container")
+
+        backCatalog.addEventListener("click", function (e) {
+            // e.preventDefault()
+             cancelPopup()
+        })
+        
+        getOrder.addEventListener("click", function(e){
+            e.preventDefault()
+            cartPopup.style.display = "none"
+            // darkBg.style.display = "none"
+            orderContainer.style.display = "block"
+        })
+
+    document.querySelector("#cartData").value = localStorage.getItem("cart")
 }
 function addCartItemListeners() {
     document.querySelectorAll('.increase-qty').forEach(btn => {
@@ -570,6 +584,7 @@ function addCartItemListeners() {
 }
 
 function updateCartItemQty(itemEl, delta) {
+
     const id = parseInt(itemEl.dataset.id),
         sizeLabel = itemEl.dataset.size
 
@@ -598,6 +613,8 @@ function updateCartItemQty(itemEl, delta) {
     cart[index].total = newQty * pricePerItem
 
     localStorage.setItem('cart', JSON.stringify(cart))
+    
+    
     renderCartItems()
 }
 
@@ -608,3 +625,17 @@ function openCart() {
     renderCartItems()
     document.querySelector("#cartData").value = localStorage.getItem("cart")
 }
+
+
+
+
+orderCancel.addEventListener("click", function(e){
+    e.preventDefault()
+    cancelPopup()
+})
+
+backOrderCataloge.addEventListener("click", function(e){
+    e.preventDefault()
+    cancelPopup()
+
+})

@@ -1,26 +1,11 @@
 .cart_popup
     a.cancel_cart(href="#")
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M1 15L14.7071 1M15 15L1.29291 1" stroke="#121212" stroke-width="1.5" stroke-linecap="round"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="15" fill="white"/>
+            <path d="M13 1.00005L1 13M0.999949 1L12.9999 13" stroke="#33C364" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     h2 Кошик
     p.error_cart.flex.items-center
         <svg xmlns="http://www.w3.org/2000/svg" height="54px" viewBox="0 -960 960 960" width="54px" fill="#5f6368"><path d="m634-440-81-80h69l110-200H353l-80-80h525q23 0 35.5 19.5t.5 42.5L692-482q-11 20-28 31t-30 11ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm540 52L566-280H304q-44 0-67-37.5t-3-78.5l42-86-72-162L28-820l56-56L876-84l-56 56ZM486-360l-80-80h-62l-40 80h182Zm136-160h-69 69Zm58 440q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80Z"/></svg>
-        span Кошик порожній
-    form(action="#") 
-        input(type="hidden" name="cartData" id="cartData")
-    .order_container
-    //- form.order_container(action="sendorder.php" method="post")
-    //-     .data
-    //-         .name
-    //-             label(for='name')  
-    //-             input#name(type='text' name='userName' minlength='3' maxlength='30' placeholder='введіть ваше імʼя*' required='' oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')")
-    //-         .phone
-    //-             label(for='phone')  
-    //-             input.phoneInput.inputMask(type='tel' name='userPhone' placeholder='введіть ваш телефон*' required='' maxlength='13')
-    //-             span.error-tel
-    //-         input(type="hidden" id="orderWebsiteURL" name="orderWebsiteURL")
-        .order
-            .cart-container.grid.items-center
-            .wrapper.tac_form_btn
-                button(type="submit").submit-btn Оформити замовлення
+        span Кошик порожній        
+    .cart_container

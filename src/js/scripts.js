@@ -49,10 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
         burger.addEventListener("click", function () {
             menu.style.right = "-10px";
             dark.style.display = "block"
+            dark.style.zIndex = "2"
         })
-
+        
         function cancelBurger() {
             menu.style.right = "-100%";
+            dark.style.zIndex = "6"
             dark.style.display = "none"
             privacy.style.display = "none"
         }
