@@ -1,0 +1,129 @@
+.product-card
+    overflow: hidden
+    h3
+        min-height: 90px
+        font-size: 24rem
+        font-weight: 600
+.main-img
+    border-radius: 15px
+    min-height: 400rem
+
+.img_container
+    overflow-x: auto
+    grid-auto-flow: column
+    &::-webkit-scrollbar 
+        width: 100%
+        height: 5px
+        border-radius: 3rem
+        background-color: #ccc
+    &::-webkit-scrollbar-thumb 
+        border-radius: 3rem
+        background-color: #717070
+    img
+        width: 108rem
+        height: 120rem
+        border-radius: 5px
+
+.img-wrapper
+    position: relative
+
+.img-index
+    position: absolute
+    width: 30px
+    bottom: 10px
+    left: 50%
+    font-size: 12px
+    font-weight: 500
+    text-align: center
+    transform: translateX(-50%)
+    border-radius: 3px
+    background: #F3F3F3
+
+.price
+    font-size: 16px
+    font-weight: 600
+    .price-value
+        color: #33C364
+        font-size: 24px
+.sizes
+    display: grid
+    grid-auto-flow: column
+    padding-left: 2px
+    gap: 10px
+    overflow-x: auto
+    &::-webkit-scrollbar 
+        width: 100%
+        height: 5px
+        border-radius: 3rem
+        background-color: #ccc
+    &::-webkit-scrollbar-thumb 
+        border-radius: 3rem
+        background-color: #717070
+.size-label
+    text-align: center
+    input
+        appearance: none
+        width: 100%
+        &:checked
+            + span
+                color: #121212
+                border: 1px solid #33C364
+.label-span
+    display: block
+    padding: 5px
+    color: #D9D9D9
+    border-radius: 8px
+    border: 1px solid #D9D9D9
+    font-weight: 600
+    span
+        display: block
+        font-size: 11px
+
+.min_count_text
+    margin-bottom: 10px
+    font-size: 14px
+    font-style: italic
+    font-weight: 500
+    span
+        font-weight: 600
+
+.quantity-controls
+    text-align: center
+    gap: 0
+    font-size: 20rem
+    grid-template-columns: 2fr 3fr 2fr
+    border-radius: 8px
+    border: 1px solid #D9D9D9
+    button
+        font-size: 20rem
+        border: none
+        color: #D9D9D9
+        background-color: #fff
+        cursor: pointer
+        transition: all .5 ease
+        &:hover
+            color: #121212
+    span 
+        height: 100%
+        border-left: 1px solid #d9d9d9
+        border-right: 1px solid #d9d9d9
+        justify-content: center
+    
+.add-to-cart 
+    justify-content: center
+    padding: 10px
+    gap: 10px
+    font-size: 16px
+    border: none
+    border-radius: 50px
+    background: #33C364
+    transition: all .5s ease
+    cursor: pointer
+    svg
+        path
+            transition: all .5s ease
+    &:hover
+        color: #fff
+        svg
+            path 
+                fill: #fff

@@ -70,6 +70,121 @@ const products = [
         }
     },
     {
+        id: 3,
+        category: 'Постільна білизна',
+        imgMain: 'img/postil/1/postil.jpg',
+        img: [
+            'img/postil/1/postil_1.jpg',
+            'img/postil/1/postil_2.jpg',
+            'img/postil/1/postil_3.jpg',
+            'img/postil/1/postil_4.jpg',
+            'img/postil/1/postil_5.jpg',
+        ],
+        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
+        pack: true,
+        size: {
+            size1: {
+                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
+                inPack: 1,
+                salePack: 6,
+                price: 690,
+                salePrice: 550
+            }
+        }
+    },
+    {
+        id: 3,
+        category: 'Постільна білизна',
+        imgMain: 'img/postil/1/postil.jpg',
+        img: [
+            'img/postil/1/postil_1.jpg',
+            'img/postil/1/postil_2.jpg',
+            'img/postil/1/postil_3.jpg',
+            'img/postil/1/postil_4.jpg',
+            'img/postil/1/postil_5.jpg',
+        ],
+        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
+        pack: true,
+        size: {
+            size1: {
+                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
+                inPack: 1,
+                salePack: 6,
+                price: 690,
+                salePrice: 550
+            }
+        }
+    },
+    {
+        id: 3,
+        category: 'Постільна білизна',
+        imgMain: 'img/postil/1/postil.jpg',
+        img: [
+            'img/postil/1/postil_1.jpg',
+            'img/postil/1/postil_2.jpg',
+            'img/postil/1/postil_3.jpg',
+            'img/postil/1/postil_4.jpg',
+            'img/postil/1/postil_5.jpg',
+        ],
+        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
+        pack: true,
+        size: {
+            size1: {
+                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
+                inPack: 1,
+                salePack: 6,
+                price: 690,
+                salePrice: 550
+            }
+        }
+    },
+    {
+        id: 3,
+        category: 'Постільна білизна',
+        imgMain: 'img/postil/1/postil.jpg',
+        img: [
+            'img/postil/1/postil_1.jpg',
+            'img/postil/1/postil_2.jpg',
+            'img/postil/1/postil_3.jpg',
+            'img/postil/1/postil_4.jpg',
+            'img/postil/1/postil_5.jpg',
+        ],
+        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
+        pack: true,
+        size: {
+            size1: {
+                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
+                inPack: 1,
+                salePack: 6,
+                price: 690,
+                salePrice: 550
+            }
+        }
+    },
+    {
+        id: 3,
+        category: 'Постільна білизна',
+        imgMain: 'img/postil/1/postil.jpg',
+        img: [
+            'img/postil/1/postil_1.jpg',
+            'img/postil/1/postil_2.jpg',
+            'img/postil/1/postil_3.jpg',
+            'img/postil/1/postil_4.jpg',
+            'img/postil/1/postil_5.jpg',
+        ],
+        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
+        pack: true,
+        size: {
+            size1: {
+                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
+                inPack: 1,
+                salePack: 6,
+                price: 690,
+                salePrice: 550
+            }
+        }
+    },
+    {
         id: 4,
         category: 'Покривала',
         imgMain: 'img/pokrivalo/1/pokrivalo.jpg',
@@ -113,7 +228,10 @@ function renderProductCard(product, index) {
                 value="${key}" 
                 ${i === 0 ? 'checked' : ''}
             >
-            ${size.s}
+            <span class="label-span">
+                ${size.s}
+                <span class="label_in_pack">${size.inPack} шт в упаковці</span>
+            </span>
         </label>
     `).join('')
 
@@ -123,7 +241,7 @@ function renderProductCard(product, index) {
         <figure class="product-card" data-id="${product.id}" data-size="${firstSizeKey}">
             <figcaption>
                 <img src="${product.imgMain}" alt="${product.title}" class="main-img">
-                <div class="img_container">
+                <div class="grid img_container">
                     ${product.img.map((img, i) => `
                         <picture class="img-wrapper">
                             <img src="${img}" class="small_img" alt="${product.title}">
@@ -132,17 +250,25 @@ function renderProductCard(product, index) {
                     `).join('')}
                 </div>
                 <h3>${product.title}</h3>
-                <div class="sizes">${sizeOptions}</div>
                 <p class="price">
-                    <span class="price-value">${defaultSize.price}</span> грн <span>(за 1шт)</span>
+                    <span class="price-value">${defaultSize.price} грн </span><span>(ціна за 1шт)</span>
                 </p>
-                <div class="quantity-controls">
-                    <button class="decrease">-</button>
-                    <span class="quantity">${defaultSize.inPack}</span>
-                    <button class="increase">+</button>
+                <div class="sizes">${sizeOptions}</div>
+                <p class="min_count_text">мінімальна кількість для замовлення - <span class="pack-count">${defaultSize.inPack}</span> шт</p>
+                <div class="grid col-2">
+                    <div class="quantity-controls grid items-center">
+                        <button class="decrease">-</button>
+                        <span class="quantity flex items-center">${defaultSize.inPack}</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="add-to-cart flex items-center">
+                        в кошик
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path d="M24.05 6.9752H23.55L19.325 2.7502C18.9875 2.4127 18.4375 2.4127 18.0875 2.7502C17.75 3.0877 17.75 3.6377 18.0875 3.9877L21.075 6.9752H8.925L11.9125 3.9877C12.25 3.6502 12.25 3.1002 11.9125 2.7502C11.575 2.4127 11.025 2.4127 10.675 2.7502L6.4625 6.9752H5.9625C4.8375 6.9752 2.5 6.9752 2.5 10.1752C2.5 11.3877 2.75 12.1877 3.275 12.7127C3.575 13.0252 3.9375 13.1877 4.325 13.2752C4.6875 13.3627 5.075 13.3752 5.45 13.3752H24.55C24.9375 13.3752 25.3 13.3502 25.65 13.2752C26.7 13.0252 27.5 12.2752 27.5 10.1752C27.5 6.9752 25.1625 6.9752 24.05 6.9752Z" fill="#1E1E1E"/>
+                            <path d="M23.8126 15H6.08757C5.31257 15 4.72507 15.6875 4.85007 16.45L5.90007 22.875C6.25007 25.025 7.18757 27.5 11.3501 27.5H18.3626C22.5751 27.5 23.3251 25.3875 23.7751 23.025L25.0376 16.4875C25.1876 15.7125 24.6001 15 23.8126 15ZM13.2626 23.0625C13.2626 23.55 12.8751 23.9375 12.4001 23.9375C11.9126 23.9375 11.5251 23.55 11.5251 23.0625V18.9375C11.5251 18.4625 11.9126 18.0625 12.4001 18.0625C12.8751 18.0625 13.2626 18.4625 13.2626 18.9375V23.0625ZM18.6126 23.0625C18.6126 23.55 18.2251 23.9375 17.7376 23.9375C17.2626 23.9375 16.8626 23.55 16.8626 23.0625V18.9375C16.8626 18.4625 17.2626 18.0625 17.7376 18.0625C18.2251 18.0625 18.6126 18.4625 18.6126 18.9375V23.0625Z" fill="#1E1E1E"/>
+                        </svg>
+                    </button>
                 </div>
-                <p>Мінімальна кількість: <span class="pack-count">${defaultSize.inPack}</span> шт</p>
-                <button class="add-to-cart">В кошик</button>
             </figcaption>
         </figure>
     `
@@ -198,7 +324,7 @@ function initProductCards(productsToRender) {
               packsCount = qty / size.inPack,
               priceToShow = packsCount >= size.salePack ? size.salePrice : size.price
 
-        card.querySelector('.price-value').textContent = priceToShow
+        card.querySelector('.price-value').textContent = priceToShow + ' грн '
         card.querySelector('.pack-count').textContent = size.inPack
     }
 
@@ -264,13 +390,14 @@ function renderCategoryFilters(products) {
         categories = ['Пледи', 'Покривала', 'Рушники', 'Постільна білизна']
 
     filtersContainer.innerHTML = categories.map(category => `
-        <button class="category-btn ${category === 'Пледи' ? 'active' : ''}" data-category="${category}">
+        <button class="category-btn transparent_cta ${category === 'Пледи' ? 'active' : ''}" data-category="${category}">
             ${category}
         </button>
     `).join('')
 
     document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
             const category = btn.dataset.category
 
             document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'))
@@ -416,65 +543,62 @@ function renderCartItems() {
 function addCartItemListeners() {
     document.querySelectorAll('.increase-qty').forEach(btn => {
         btn.addEventListener('click', () => {
-            const itemEl = btn.closest('.cart-container');
-            updateCartItemQty(itemEl, 1);
-        });
-    });
+            const itemEl = btn.closest('.cart-container')
+            updateCartItemQty(itemEl, 1)
+        })
+    })
 
     document.querySelectorAll('.decrease-qty').forEach(btn => {
         btn.addEventListener('click', () => {
-            const itemEl = btn.closest('.cart-container');
-            updateCartItemQty(itemEl, -1);
-        });
-    });
+            const itemEl = btn.closest('.cart-container')
+            updateCartItemQty(itemEl, -1)
+        })
+    })
 
     document.querySelectorAll('.delete_cta').forEach(btn => {
         btn.addEventListener('click', () => {
-            const itemEl = btn.closest('.cart-container');
-            const id = parseInt(itemEl.dataset.id);
-            const size = itemEl.dataset.size;
+            const itemEl = btn.closest('.cart-container')
+            const id = parseInt(itemEl.dataset.id)
+            const size = itemEl.dataset.size
 
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.filter(i => !(i.id === id && i.size === size));
-            localStorage.setItem('cart', JSON.stringify(cart));
-            renderCartItems();
-        });
-    });
+            let cart = JSON.parse(localStorage.getItem('cart')) || []
+            cart = cart.filter(i => !(i.id === id && i.size === size))
+            localStorage.setItem('cart', JSON.stringify(cart))
+            renderCartItems()
+        })
+    })
 }
 
 function updateCartItemQty(itemEl, delta) {
-    const id = parseInt(itemEl.dataset.id);
-    const sizeLabel = itemEl.dataset.size;
+    const id = parseInt(itemEl.dataset.id),
+        sizeLabel = itemEl.dataset.size
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const index = cart.findIndex(i => i.id === id && i.size === sizeLabel);
+    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    const index = cart.findIndex(i => i.id === id && i.size === sizeLabel)
 
-    if (index === -1) return;
+    if (index === -1) return
 
-    // Знаходимо продукт і розмір, щоб знати параметри упаковки і ціни
-    const product = products.find(p => p.id === id);
-    if (!product) return;
+    const product = products.find(p => p.id === id)
+    if (!product) return
 
-    // Знайти розмір по label size (size.s)
-    let sizeKey = Object.keys(product.size).find(key => product.size[key].s === sizeLabel);
-    if (!sizeKey) return;
+    let sizeKey = Object.keys(product.size).find(key => product.size[key].s === sizeLabel)
+    if (!sizeKey) return
 
-    const sizeObj = product.size[sizeKey];
-    const step = sizeObj.inPack;
+    const sizeObj = product.size[sizeKey],
+        step = sizeObj.inPack
 
-    let newQty = cart[index].quantity + delta * step;
-    if (newQty < step) newQty = step; // мінімальна кількість — розмір упаковки
+    let newQty = cart[index].quantity + delta * step
+    if (newQty < step) newQty = step
 
-    // Перерахунок ціни з урахуванням знижки
-    const packsCount = newQty / step;
-    const pricePerItem = packsCount >= sizeObj.salePack ? sizeObj.salePrice : sizeObj.price;
+    const packsCount = newQty / step,
+        pricePerItem = packsCount >= sizeObj.salePack ? sizeObj.salePrice : sizeObj.price
 
-    cart[index].quantity = newQty;
-    cart[index].pricePerItem = pricePerItem;
-    cart[index].total = newQty * pricePerItem;
+    cart[index].quantity = newQty
+    cart[index].pricePerItem = pricePerItem
+    cart[index].total = newQty * pricePerItem
 
-    localStorage.setItem('cart', JSON.stringify(cart));
-    renderCartItems();
+    localStorage.setItem('cart', JSON.stringify(cart))
+    renderCartItems()
 }
 
 function openCart() {
