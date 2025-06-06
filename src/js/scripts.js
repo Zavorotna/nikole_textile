@@ -82,6 +82,14 @@ document.addEventListener("DOMContentLoaded", function () {
             img.src = 'img/reviews/' + `${reviews.src}` + '.jpg'
             img.alt = `${reviews.alt}`
             img.setAttribute('loading', 'lazy')
+            img.addEventListener("click", function () {
+                const popupImg = document.querySelector('.popup_img') 
+                    srcPopup = popupImg.querySelector("img")
+                    
+                srcPopup.src = this.src;
+                darkBg.style.display = "block"
+                popupImg.style.display = "block";
+            });
             picture.appendChild(img)
             containerReviews.appendChild(picture)
         })
@@ -91,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentIndex >= reviews.length) {
             document.querySelector('#show-more-btn').style.display = 'none'
         }
+
     }
 
     document.querySelector('#show-more-btn').addEventListener('click', function(e){

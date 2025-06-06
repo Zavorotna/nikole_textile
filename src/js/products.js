@@ -4,6 +4,7 @@ const products = [
         category: 'Рушники',
         imgMain: 'img/rushniki/1/rushnik.jpg',
         img: [
+            'img/rushniki/1/rushnik.jpg',
             'img/rushniki/1/rushnik_2.jpg',
             'img/rushniki/1/rushnik_3.jpg',
             'img/rushniki/1/rushnik_4.jpg',
@@ -51,6 +52,7 @@ const products = [
         category: 'Постільна білизна',
         imgMain: 'img/postil/1/postil.jpg',
         img: [
+            'img/postil/1/postil.jpg',
             'img/postil/1/postil_1.jpg',
             'img/postil/1/postil_2.jpg',
             'img/postil/1/postil_3.jpg',
@@ -74,6 +76,7 @@ const products = [
         category: 'Постільна білизна',
         imgMain: 'img/postil/1/postil.jpg',
         img: [
+            'img/postil/1/postil.jpg',
             'img/postil/1/postil_1.jpg',
             'img/postil/1/postil_2.jpg',
             'img/postil/1/postil_3.jpg',
@@ -97,6 +100,7 @@ const products = [
         category: 'Постільна білизна',
         imgMain: 'img/postil/1/postil.jpg',
         img: [
+            'img/postil/1/postil.jpg',
             'img/postil/1/postil_1.jpg',
             'img/postil/1/postil_2.jpg',
             'img/postil/1/postil_3.jpg',
@@ -189,6 +193,7 @@ const products = [
         category: 'Покривала',
         imgMain: 'img/pokrivalo/1/pokrivalo.jpg',
         img: [
+            'img/pokrivalo/1/pokrivalo.jpg',
             'img/pokrivalo/1/pokrivalo_1.jpg',
             'img/pokrivalo/1/pokrivalo_2.jpg',
             'img/pokrivalo/1/pokrivalo_3.jpg',
@@ -272,6 +277,7 @@ function renderProductCard(product, index) {
             </figcaption>
         </figure>
     `
+    
 }
 
 function initProductCards(productsToRender) {
@@ -312,6 +318,7 @@ function initProductCards(productsToRender) {
         localStorage.setItem('cart', JSON.stringify(existingCart))
 
         // alert('Товар додано в кошик!')
+        openCart()
     })
 
     function getSelectedSize() {
@@ -384,6 +391,28 @@ function displayProducts(productsArray) {
     const container = document.querySelector('.product-container')
     container.innerHTML = productsArray.map(renderProductCard).join('')
     initProductCards(productsArray)
+    // підміна фото
+    const productCards = document.querySelectorAll(".product-card"),
+        popupImg = document.querySelector(".popup_img")
+
+    productCards.forEach(card => {
+        const mainImg = card.querySelector(".main-img"),
+            smallImgs = card.querySelectorAll(".small_img")
+
+        smallImgs.forEach(smallImg => {
+            smallImg.addEventListener("click", function () {
+                mainImg.src = this.src
+            })
+        })
+        
+        mainImg.addEventListener("click", function() {
+           popupImg.style.display = "block"
+           darkBg.style.display = "block"
+           let srcPopup = popupImg.querySelector("img")
+           srcPopup.src = mainImg.src
+        })
+    })  
+    
 }
 
 function renderCategoryFilters(products) {
@@ -463,8 +492,10 @@ const cartPopup = document.querySelector(".cart_popup"),
     deleteCta = document.querySelector(".delete_cta"),
     cancelCart = document.querySelector(".cancel_cart"),
     orderCancel = document.querySelector(".cancel_order"),
+    imgPopupCancel = document.querySelector(".cancel_img"),
     backOrderCataloge = document.querySelector(".back_catalogue_order"),
-    orderContainer = document.querySelector(".order_container")
+    orderContainer = document.querySelector(".order_container"),
+    popupImg = document.querySelector(".popup_img")
 
 cartBtn.addEventListener("click", function (e) {
     e.preventDefault()
@@ -476,8 +507,13 @@ function cancelPopup() {
     cartPopup.style.display = "none"
     darkBg.style.display = "none"
     orderContainer.style.display = "none"
+    popupImg.style.display = "none"
 }
 
+imgPopupCancel.addEventListener("click", function (e) {
+    e.preventDefault()
+    cancelPopup()
+})
 cancelCart.addEventListener("click", function (e) {
     e.preventDefault()
     cancelPopup()
@@ -626,9 +662,6 @@ function openCart() {
     document.querySelector("#cartData").value = localStorage.getItem("cart")
 }
 
-
-
-
 orderCancel.addEventListener("click", function(e){
     e.preventDefault()
     cancelPopup()
@@ -639,3 +672,5 @@ backOrderCataloge.addEventListener("click", function(e){
     cancelPopup()
 
 })
+
+

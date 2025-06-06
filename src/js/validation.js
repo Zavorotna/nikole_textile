@@ -13,23 +13,19 @@ phoneInput.addEventListener("focus", function () {
 })
 
 phoneInput.addEventListener("input", function () {
-    let inputValue = phoneInput.value
-    // дозволяємо лише цифри та "+"
-    let cleanedValue = inputValue.replace(/[^\d+]/g, "")
+    let inputValue = phoneInput.value,
+        cleanedValue = inputValue.replace(/[^\d+]/g, "")
 
-    // не даємо прибрати +380
     if (!cleanedValue.startsWith("+380")) {
         cleanedValue = "+380" + cleanedValue.slice(3)
     }
 
-    // обрізаємо до 13 символів (+380XXXXXXXXX)
     if (cleanedValue.length > 13) {
         cleanedValue = cleanedValue.slice(0, 13)
     }
 
     phoneInput.value = cleanedValue
 
-    // Перевірка при вводі
     const validInput = isValidPhoneNumber(cleanedValue)
 
     if (validInput) {
@@ -74,7 +70,7 @@ form.addEventListener("submit", (e) => {
     }
 })
 
-// функція перевірки телефону (простий шаблон)
+// функція перевірки телефону
 function isValidPhoneNumber(phoneNumber) {
     return /^\+380\d{9}$/.test(phoneNumber)
 }

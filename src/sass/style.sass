@@ -29,7 +29,7 @@ a
 h2
     padding: 0 15rem 40rem
     text-align: center
-    font-size: 36px
+    font-size: 36rem
     font-weight: 600
 
 input
@@ -43,7 +43,8 @@ input[type='tel']
     padding: 12rem 10rem
     border-radius: 10px
     border: 1px solid $black
-
+button
+    color: #121212
 .wrapper
     width: 95%
     margin: 0 auto
@@ -84,7 +85,7 @@ img
     max-width: 237px
     padding: 19rem 60rem
     text-align: center
-    font-size: 18px
+    font-size: 18rem
     font-weight: 500
     line-height: normal
     transition: all .5 ease
@@ -276,10 +277,18 @@ img
     font-size: 12px
     font-weight: 500
 .category_btn_container
+    margin: 0 auto
+    max-width: 80%
     justify-content: center
     padding-bottom: 40rem
+    grid-template-columns: 1fr
+    +media(500)
+        grid-template-columns: repeat(2, 1fr)
+    +media(1024)
+        grid-template-columns: repeat(4, 1fr)
     button
-        padding: 20px 60px
+        width: 100%
+        padding: 20px
         color: #121212
         font-size: 18px
         font-weight: 600
