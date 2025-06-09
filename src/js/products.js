@@ -551,7 +551,7 @@ function renderCartItems() {
     cartItems.forEach(item => {
         console.log(item.total)
         const cartItemHTML = `
-            <div class="cart-container grid items-center" data-id="${item.id}" data-size="${item.size}"><img src="${item.img}" alt="${item.title}" /><div class="cart-details"><h4>${item.title}</h4><p>Розмір: ${item.size} см</p><span class="label_in_pack">${item.inPack} шт в упаковці</span></div><div class="quantity-controls grid items-center"><button class="decrease-qty">-</button><span class="quantity flex items-center">${item.quantity}</span><button class="increase-qty">+</button></div><p class="cart-price">${item.total.toFixed(2)} грн</p><a class="delete_cta" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 1.00004L1 11M0.999958 1L10.9999 11" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+            <div class="cart-container grid items-center" data-id="${item.id}" data-size="${item.size}"><img src="${item.img}" alt="${item.title}" /><div class="cart-details"><h4>${item.title}</h4><p>Розмір: ${item.size} см</p><span class="label_in_pack">${item.inPack} шт в упаковці</span></div><div class="quantity-controls grid items-center"><button class="decrease-qty">-</button><span class="quantity flex items-center">${item.quantity}</span><button class="increase-qty">+</button></div><p class="cart-price">${item.total.toFixed(0)} грн</p><a class="delete_cta" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M11 1.00004L1 11M0.999958 1L10.9999 11" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
         `
         cartContainer.insertAdjacentHTML("beforeend", cartItemHTML)
     })
@@ -559,7 +559,7 @@ function renderCartItems() {
     const totalSum = cartItems.reduce((sum, item) => sum + item.total, 0),
         totalHTML = `
             <div class="cart-total">
-                <h3>до сплати: <span>${totalSum.toFixed(2)}грн</span></h3>
+                <h3>до сплати: <span>${totalSum.toFixed(0)}грн</span></h3>
             </div>
         `
     const buttons = `
