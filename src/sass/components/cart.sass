@@ -61,7 +61,20 @@
     svg
         path
             transform: translate(28%, 28%)
+.section_cart
+    max-height: 50vh
+    overflow-x: auto 
+    overflow-y: scroll
+    padding: 0 10rem 0 0 
+    &::-webkit-scrollbar 
+        width: 5rem
+        height: 100%
+        border-radius: 3rem
+        background-color: #ccc
 
+    &::-webkit-scrollbar-thumb 
+        border-radius: 3rem
+        background-color: #696767
 .cart-container
     position: relative
     grid-template-columns: 1fr 1fr
@@ -73,6 +86,8 @@
         grid-template-columns: 1fr 2fr 1fr 1fr
     img
         // max-width: 25%
+        width: 99px
+        min-height: 120px
         border-radius: 10px 
     h4
         font-size: 20rem

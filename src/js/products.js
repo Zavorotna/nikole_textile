@@ -200,7 +200,7 @@ const products = [
             'img/pokrivalo/1/pokrivalo_4.jpg',
             'img/pokrivalo/1/pokrivalo_5.jpg',
         ],
-        title: 'Покривала фібра "іній". М\'якенькі,пухкенькі,приємні на дотик.',
+        title: "Покривала фібра 'іній'. М'якенькі, пухкенькі, приємні на дотик.",
         pack: true,
         size: {
             size1: {
@@ -546,7 +546,7 @@ function renderCartItems() {
     }
 
     errorCart.style.display = "none"
-    cartContainer.style.display = "grid"
+    cartContainer.style.display = "block"
 
     cartItems.forEach(item => {
         console.log(item.total)
