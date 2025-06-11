@@ -1,219 +1,3 @@
-const products = [
-    {
-        id: 1,
-        category: 'Рушники',
-        imgMain: 'img/rushniki/1/rushnik.jpg',
-        img: [
-            'img/rushniki/1/rushnik.jpg',
-            'img/rushniki/1/rushnik_2.jpg',
-            'img/rushniki/1/rushnik_3.jpg',
-            'img/rushniki/1/rushnik_4.jpg',
-            'img/rushniki/1/rushnik_5.jpg',
-        ],
-        title: 'Махрові рушники. Натуралка, люкс котон 100%.',
-        pack: true,
-        size: {
-            size1: {
-                s: '70X140',
-                inPack: 6,
-                salePack: 3,
-                price: 330,
-                salePrice: 310
-            },
-            size2: {
-                s: '50X90',
-                inPack: 6,
-                salePack: 3,
-                price: 170,
-                salePrice: 160
-            },
-        }
-    },
-    {
-        id: 2,
-        category: 'Пледи',
-        imgMain: 'img/pledy/1/pled_haski.webp',
-        img: [
-        ],
-        title: 'Іграшка з пледиком всередині "Хаскі"',
-        pack: true,
-        size: {
-            size1: {
-                s: '110X150',
-                inPack: 1,
-                salePack: 4,
-                price: 450,
-                salePrice: 370
-            }
-        }
-    },
-    {
-        id: 3,
-        category: 'Постільна білизна',
-        imgMain: 'img/postil/1/postil.jpg',
-        img: [
-            'img/postil/1/postil.jpg',
-            'img/postil/1/postil_1.jpg',
-            'img/postil/1/postil_2.jpg',
-            'img/postil/1/postil_3.jpg',
-            'img/postil/1/postil_4.jpg',
-            'img/postil/1/postil_5.jpg',
-        ],
-        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
-        pack: true,
-        size: {
-            size1: {
-                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
-                inPack: 1,
-                salePack: 6,
-                price: 690,
-                salePrice: 550
-            }
-        }
-    },
-    {
-        id: 3,
-        category: 'Постільна білизна',
-        imgMain: 'img/postil/1/postil.jpg',
-        img: [
-            'img/postil/1/postil.jpg',
-            'img/postil/1/postil_1.jpg',
-            'img/postil/1/postil_2.jpg',
-            'img/postil/1/postil_3.jpg',
-            'img/postil/1/postil_4.jpg',
-            'img/postil/1/postil_5.jpg',
-        ],
-        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
-        pack: true,
-        size: {
-            size1: {
-                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
-                inPack: 1,
-                salePack: 6,
-                price: 690,
-                salePrice: 550
-            }
-        }
-    },
-    {
-        id: 3,
-        category: 'Постільна білизна',
-        imgMain: 'img/postil/1/postil.jpg',
-        img: [
-            'img/postil/1/postil.jpg',
-            'img/postil/1/postil_1.jpg',
-            'img/postil/1/postil_2.jpg',
-            'img/postil/1/postil_3.jpg',
-            'img/postil/1/postil_4.jpg',
-            'img/postil/1/postil_5.jpg',
-        ],
-        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
-        pack: true,
-        size: {
-            size1: {
-                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
-                inPack: 1,
-                salePack: 6,
-                price: 690,
-                salePrice: 550
-            }
-        }
-    },
-    {
-        id: 3,
-        category: 'Постільна білизна',
-        imgMain: 'img/postil/1/postil.jpg',
-        img: [
-            'img/postil/1/postil_1.jpg',
-            'img/postil/1/postil_2.jpg',
-            'img/postil/1/postil_3.jpg',
-            'img/postil/1/postil_4.jpg',
-            'img/postil/1/postil_5.jpg',
-        ],
-        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
-        pack: true,
-        size: {
-            size1: {
-                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
-                inPack: 1,
-                salePack: 6,
-                price: 690,
-                salePrice: 550
-            }
-        }
-    },
-    {
-        id: 3,
-        category: 'Постільна білизна',
-        imgMain: 'img/postil/1/postil.jpg',
-        img: [
-            'img/postil/1/postil_1.jpg',
-            'img/postil/1/postil_2.jpg',
-            'img/postil/1/postil_3.jpg',
-            'img/postil/1/postil_4.jpg',
-            'img/postil/1/postil_5.jpg',
-        ],
-        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
-        pack: true,
-        size: {
-            size1: {
-                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
-                inPack: 1,
-                salePack: 6,
-                price: 690,
-                salePrice: 550
-            }
-        }
-    },
-    {
-        id: 3,
-        category: 'Постільна білизна',
-        imgMain: 'img/postil/1/postil.jpg',
-        img: [
-            'img/postil/1/postil_1.jpg',
-            'img/postil/1/postil_2.jpg',
-            'img/postil/1/postil_3.jpg',
-            'img/postil/1/postil_4.jpg',
-            'img/postil/1/postil_5.jpg',
-        ],
-        title: 'Покривала +2 наволочки. 2 слоя тканини, хб',
-        pack: true,
-        size: {
-            size1: {
-                s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
-                inPack: 1,
-                salePack: 6,
-                price: 690,
-                salePrice: 550
-            }
-        }
-    },
-    {
-        id: 4,
-        category: 'Покривала',
-        imgMain: 'img/pokrivalo/1/pokrivalo.jpg',
-        img: [
-            'img/pokrivalo/1/pokrivalo.jpg',
-            'img/pokrivalo/1/pokrivalo_1.jpg',
-            'img/pokrivalo/1/pokrivalo_2.jpg',
-            'img/pokrivalo/1/pokrivalo_3.jpg',
-            'img/pokrivalo/1/pokrivalo_4.jpg',
-            'img/pokrivalo/1/pokrivalo_5.jpg',
-        ],
-        title: "Покривала фібра 'іній'. М'якенькі, пухкенькі, приємні на дотик.",
-        pack: true,
-        size: {
-            size1: {
-                s: '180X200',
-                inPack: 6,
-                salePack: 10,
-                price: 245,
-                salePrice: 235
-            }
-        }
-    },
-
-]
 
 function groupByCategory(products) {
     return products.reduce((acc, product) => {
@@ -381,7 +165,7 @@ function renderPage() {
 
     const btn = document.querySelector('#show-more-btn-prod')
     if (products.length > productsPerPage) {
-        btn.style.display = 'block'
+        btn.style.display = 'flex'
     } else {
         btn.style.display = 'none'
     }
@@ -440,8 +224,9 @@ function renderCategoryFilters(products) {
 
             const btnMore = document.querySelector('#show-more-btn-prod')
             if (filtered.length > productsPerPage) {
-                btnMore.style.display = 'block'
-                btnMore.onclick = () => {
+                btnMore.style.display = 'flex'
+                btnMore.onclick = (e) => {
+                    e.preventDefault()
                     currentPage++
                     displayProducts(filtered.slice(0, productsPerPage * currentPage))
                     if (filtered.length <= productsPerPage * currentPage) {
@@ -460,7 +245,7 @@ function renderCategoryFilters(products) {
 
     const btnMore = document.querySelector('#show-more-btn-prod')
     if (filtered.length > productsPerPage) {
-        btnMore.style.display = 'block'
+        btnMore.style.display = 'flex'
         btnMore.onclick = () => {
             currentPage++
             displayProducts(filtered.slice(0, productsPerPage * currentPage))
@@ -477,7 +262,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCategoryFilters(products)
 
     const showMoreBtn = document.querySelector('#show-more-btn-prod')
-    showMoreBtn.addEventListener('click', () => {
+    showMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault()
         currentPage++
         renderPage()
     })
@@ -577,14 +363,12 @@ function renderCartItems() {
         orderContainer = document.querySelector(".order_container")
 
         backCatalog.addEventListener("click", function (e) {
-            // e.preventDefault()
              cancelPopup()
         })
         
         getOrder.addEventListener("click", function(e){
             e.preventDefault()
             cartPopup.style.display = "none"
-            // darkBg.style.display = "none"
             orderContainer.style.display = "block"
         })
 
@@ -650,7 +434,6 @@ function updateCartItemQty(itemEl, delta) {
 
     localStorage.setItem('cart', JSON.stringify(cart))
     
-    
     renderCartItems()
 }
 
@@ -670,7 +453,6 @@ orderCancel.addEventListener("click", function(e){
 backOrderCataloge.addEventListener("click", function(e){
     e.preventDefault()
     cancelPopup()
-
 })
 
 
