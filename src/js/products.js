@@ -25,7 +25,7 @@ function renderProductCard(product, index) {
     `).join('')
 
     const defaultSize = product.size[firstSizeKey]
-
+    console.log(defaultSize);
     return `
         <figure class="product-card" data-id="${product.id}" data-size="${firstSizeKey}">
             <figcaption>
@@ -74,7 +74,7 @@ function initProductCards(productsToRender) {
         const selectedKey = card.querySelector('input[type="radio"]:checked').value,
             size = product.size[selectedKey],
             qty = parseInt(card.querySelector('.quantity').textContent),
-            packsCount = qty / size.inPack,
+            packsCount = qty / size.packSize,
             pricePerItem = packsCount >= size.salePack ? size.salePrice : size.price
 
         const cartItem = {
@@ -82,6 +82,7 @@ function initProductCards(productsToRender) {
             title: product.title,
             size: size.s,
             inPack: size.inPack,
+            packSize: size.packSize,
             quantity: qty,
             pricePerItem: pricePerItem,
             total: qty * pricePerItem,
@@ -113,17 +114,17 @@ function initProductCards(productsToRender) {
     function updateView() {
         const size = getSelectedSize(),
               qty = parseInt(card.querySelector('.quantity').textContent),
-              packsCount = qty / size.inPack,
+              packsCount = qty / size.packSize,
               priceToShow = packsCount >= size.salePack ? size.salePrice : size.price
 
         card.querySelector('.price-value').textContent = priceToShow + ' грн '
-        card.querySelector('.pack-count').textContent = size.inPack
+        // card.querySelector('.pack-count').textContent = size.packSize
     }
 
     card.querySelectorAll('input[type="radio"]').forEach(radio => {
         radio.addEventListener('change', () => {
             const size = getSelectedSize()
-            card.querySelector('.quantity').textContent = size.inPack
+            card.querySelector('.quantity').textContent = size.packSize
             updateView()
         })
     })
@@ -137,7 +138,7 @@ function initProductCards(productsToRender) {
         let qty = parseInt(quantity.textContent)
 
         if (qty > size.inPack) {
-            qty -= size.inPack
+            qty -= size.packSize
             quantity.textContent = qty
             updateView()
         }
@@ -147,7 +148,7 @@ function initProductCards(productsToRender) {
         const size = getSelectedSize()
         let qty = parseInt(quantity.textContent)
 
-        qty += size.inPack
+        qty += size.packSize
         quantity.textContent = qty
         updateView()
     })
@@ -420,10 +421,10 @@ function updateCartItemQty(itemEl, delta) {
     if (!sizeKey) return
 
     const sizeObj = product.size[sizeKey],
-        step = sizeObj.inPack
+        step = sizeObj.packSize
 
     let newQty = cart[index].quantity + delta * step
-    if (newQty < step) newQty = step
+    if (newQty < sizeObj.inPack) newQty = sizeObj.inPack
 
     const packsCount = newQty / step,
         pricePerItem = packsCount >= sizeObj.salePack ? sizeObj.salePrice : sizeObj.price

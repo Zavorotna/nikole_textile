@@ -16,6 +16,7 @@ const products = [
             size1: {
                 s: '70X140',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 3,
                 price: 330,
                 salePrice: 310
@@ -23,6 +24,7 @@ const products = [
             size2: {
                 s: '50X90',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 3,
                 price: 170,
                 salePrice: 160
@@ -41,6 +43,7 @@ const products = [
             size1: {
                 s: '110X150',
                 inPack: 1,
+                packSize: 1, 
                 salePack: 4,
                 price: 450,
                 salePrice: 370
@@ -65,6 +68,7 @@ const products = [
             size1: {
                 s: 'Покривало 200 на 230. Наволочки 50 на 70 (2шт).',
                 inPack: 1,
+                packSize: 1, 
                 salePack: 6,
                 price: 690,
                 salePrice: 550
@@ -89,6 +93,7 @@ const products = [
             size1: {
                 s: '180X200',
                 inPack: 6,
+                packSize: 1, 
                 salePack: 10,
                 price: 245,
                 salePrice: 235
@@ -110,6 +115,7 @@ const products = [
             size1: {
                 s: '70X140',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 3,
                 price: 220,
                 salePrice: 200
@@ -117,6 +123,7 @@ const products = [
             size2: {
                 s: '50X90',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 3,
                 price: 115,
                 salePrice: 105
@@ -144,6 +151,7 @@ const products = [
             size1: {
                 s: '200*220 підковдра. 180*200 (+25 бока) простирадло на резинці. 50*70 наволочки(2 шт).',
                 inPack: 1,
+                packSize: 1, 
                 salePack: 3,
                 price: 990,
                 salePrice: 850
@@ -163,6 +171,7 @@ const products = [
             size1: {
                 s: '50X90',
                 inPack: 8,
+                packSize: 8,
                 salePack: 3,
                 price: 70,
                 salePrice: 65
@@ -181,6 +190,7 @@ const products = [
             size1: {
                 s: '110X150',
                 inPack: 1,
+                packSize: 1, 
                 salePack: 4,
                 price: 450,
                 salePrice: 370
@@ -200,6 +210,7 @@ const products = [
             size1: {
                 s: '25X50',
                 inPack: 20,
+                packSize: 20, 
                 salePack: 5,
                 price: 12,
                 salePrice: 10
@@ -224,6 +235,7 @@ const products = [
             size1: {
                 s: 'Підковдра 200 на 220. Простирадло 220 на 240. Наволочки 50 на 70 (2шт)',
                 inPack: 1,
+                packSize: 1, 
                 salePack: 3,
                 price: 1150,
                 salePrice: 1000
@@ -243,6 +255,7 @@ const products = [
             size1: {
                 s: '70X140',
                 inPack: 8,
+                packSize: 8, 
                 salePack: 3,
                 price: 160,
                 salePrice: 150
@@ -250,6 +263,7 @@ const products = [
             size2: {
                 s: '50X90',
                 inPack: 8,
+                packSize: 8, 
                 salePack: 3,
                 price: 80,
                 salePrice: 75
@@ -269,6 +283,7 @@ const products = [
             size1: {
                 s: '35X70',
                 inPack: 5,
+                packSize: 5, 
                 salePack: 10,
                 price: 50,
                 salePrice: 40
@@ -288,6 +303,7 @@ const products = [
             size1: {
                 s: '35X70',
                 inPack: 12,
+                packSize: 12, 
                 salePack: 6,
                 price: 65,
                 salePrice: 60
@@ -309,10 +325,11 @@ const products = [
         size: {
             size1: {
                 s: '35X70',
-                inPack: 12,
-                salePack: 6,
-                price: 65,
-                salePrice: 60
+                inPack: 50,
+                packSize: 1, 
+                salePack: 100,
+                price: 27,
+                salePrice: 25
             },
         }
     },
@@ -328,6 +345,7 @@ const products = [
             size1: {
                 s: '200X230',
                 inPack: 1,
+                packSize: 1, 
                 salePack: 3,
                 price: 1150,
                 salePrice: 900
@@ -353,6 +371,7 @@ const products = [
             size1: {
                 s: 'Рушники 35 на 75 + скатертина 110 на 150 + подарункова коробка',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 0,
                 price: 580,
                 salePrice: 580
@@ -360,6 +379,7 @@ const products = [
             size2: {
                 s: 'Рушники 35 на 75 + скатертина 150 на 180 + подарункова коробка',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 0,
                 price: 690,
                 salePrice: 690
@@ -367,6 +387,7 @@ const products = [
             size3: {
                 s: 'Рушники 35 на 75 + скатертина 150 на 220 + подарункова коробка',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 0,
                 price: 850,
                 salePrice: 850
@@ -385,6 +406,7 @@ const products = [
             size1: {
                 s: '50X90',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 3,
                 price: 90,
                 salePrice: 80
@@ -392,6 +414,7 @@ const products = [
             size2: {
                 s: '70X140',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 3,
                 price: 180,
                 salePrice: 170
@@ -414,6 +437,7 @@ const products = [
             size1: {
                 s: '30X30',
                 inPack: 20,
+                packSize: 20, 
                 salePack: 5,
                 price: 12,
                 salePrice: 10
@@ -435,6 +459,7 @@ const products = [
             size1: {
                 s: '50X90',
                 inPack: 6,
+                packSize: 6, 
                 salePack: 5,
                 price: 50,
                 salePrice: 47
@@ -459,6 +484,7 @@ const products = [
             size1: {
                 s: '150X200',
                 inPack: 1,
+                packSize: 1,
                 salePack: 3,
                 price: 850,
                 salePrice: 740
@@ -466,6 +492,7 @@ const products = [
             size2: {
                 s: '200X230',
                 inPack: 1,
+                packSize: 1,
                 salePack: 3,
                 price: 1200,
                 salePrice: 980
@@ -494,6 +521,7 @@ const products = [
             size1: {
                 s: '35X70',
                 inPack: 5,
+                packSize: 5, 
                 salePack: 10,
                 price: 50,
                 salePrice: 40
@@ -512,6 +540,7 @@ const products = [
             size1: {
                 s: '35X70',
                 inPack: 12,
+                packSize: 12, 
                 salePack: 5,
                 price: 50,
                 salePrice: 45
@@ -519,6 +548,7 @@ const products = [
             size2: {
                 s: '50X90',
                 inPack: 8,
+                packSize: 8, 
                 salePack: 3,
                 price: 80,
                 salePrice: 75
@@ -526,10 +556,286 @@ const products = [
             size1: {
                 s: '70X140',
                 inPack: 8,
+                packSize: 8, 
                 salePack: 3,
                 price: 160,
                 salePrice: 150
             },
+        }
+    },
+    {
+        id: 22,
+        category: 'Пледи',
+        imgMain: 'img/pledy/4/pled_mramor.jpg',
+        img: [
+            'img/pledy/4/pled_mramor_1.jpg',
+            'img/pledy/4/pled_mramor_2.jpg',
+            'img/pledy/4/pled_mramor_3.jpg',
+            'img/pledy/4/pled_mramor_4.jpg',
+            'img/pledy/4/pled_mramor_5.jpg',
+            'img/pledy/4/pled_mramor_6.jpg',
+            'img/pledy/4/pled_mramor_7.jpg',
+            'img/pledy/4/pled_mramor_8.jpg',
+            'img/pledy/4/pled_mramor_9.jpg',
+        ],
+        title: 'Плед-покривало «мрамор».',
+        pack: true,
+        size: {
+            size1: {
+                s: '200X230',
+                inPack: 1,
+                packSize: 1,
+                salePack: 3,
+                price: 670,
+                salePrice: 550
+            }
+        }
+    },
+    {
+        id: 23,
+        category: 'Рушники',
+        imgMain: 'img/rushniki/15/rushnik.webp',
+        img: [
+        ],
+        title: 'Кухонні рушники фібра.',
+        pack: true,
+        size: {
+            size1: {
+                s: '25X50',
+                inPack: 20,
+                packSize: 20, 
+                salePack: 5,
+                price: 16,
+                salePrice: 15
+            },
+        }
+    },
+    {
+        id: 24,
+        category: 'Пледи',
+        imgMain: 'img/pledy/5/pled.jpg',
+        img: [
+            'img/pledy/5/pled_1.jpg',
+            'img/pledy/5/pled_2.jpg',
+            'img/pledy/5/pled_3.jpg',
+            'img/pledy/5/pled_4.jpg',
+            'img/pledy/5/pled_5.jpg',
+            'img/pledy/5/pled_6.jpg',
+            'img/pledy/5/pled_7.jpg',
+        ],
+        title: 'Плед покривало «кролік»',
+        pack: true,
+        size: {
+            size1: {
+                s: '200X220',
+                inPack: 1,
+                packSize: 1,
+                salePack: 3,
+                price: 670,
+                salePrice: 550
+            }
+        }
+    },
+    {
+        id: 25,
+        category: 'Рушники',
+        imgMain: 'img/rushniki/16/rushnik.webp',
+        img: [
+        ],
+        title: 'Кухонні рушники фібра.',
+        pack: true,
+        size: {
+            size1: {
+                s: '35X70',
+                inPack: 12,
+                packSize: 12, 
+                salePack: 5,
+                price: 50,
+                salePrice: 45
+            },
+        }
+    },
+    {
+        id: 26,
+        category: 'Покривала',
+        imgMain: 'img/pokrivalo/3/pokrivalo_kids.jpg',
+        img: [
+            'img/pokrivalo/3/pokrivalo_kids.jpg',
+            'img/pokrivalo/3/pokrivalo_kids_1.jpg',
+            'img/pokrivalo/3/pokrivalo_kids_2.jpg',
+            'img/pokrivalo/3/pokrivalo_kids_3.jpg',
+            'img/pokrivalo/3/pokrivalo_kids_4.jpg',
+            'img/pokrivalo/3/pokrivalo_kids_5.jpg',
+            'img/pokrivalo/3/pokrivalo_kids_6.jpg',
+        ],
+        title: "Покривало дитяче.",
+        pack: true,
+        size: {
+            size1: {
+                s: '120X150',
+                inPack: 1,
+                packSize: 1,
+                salePack: 5,
+                price: 590,
+                salePrice: 450
+            }
+        }
+    },
+    {
+        id: 27,
+        category: 'Рушники',
+        imgMain: 'img/rushniki/17/rushnik.jpg',
+        img: [
+            'img/rushniki/17/rushnik.jpg',
+            'img/rushniki/17/rushnik_1.jpg',
+        ],
+        title: 'Рушники фібра.',
+        pack: true,
+        size: {
+            size1: {
+                s: '35X70',
+                inPack: 12,
+                packSize: 12, 
+                salePack: 10,
+                price: 45,
+                salePrice: 40
+            },
+        }
+    },
+    {
+        id: 28,
+        category: 'Постільна білизна',
+        imgMain: 'img/postil/4/postil_4.jpg',
+        img: [
+            'img/postil/4/postil.jpg',
+            'img/postil/4/postil_1.jpg',
+            'img/postil/4/postil_2.jpg',
+            'img/postil/4/postil_3.jpg',
+            'img/postil/4/postil_4.jpg',
+            'img/postil/4/postil_5.jpg',
+            'img/postil/4/postil_6.jpg',
+            'img/postil/4/postil_7.jpg',
+            'img/postil/4/postil_8.jpg',
+        ],
+        title: 'Постільна білизна "шарпей".',
+        pack: true,
+        size: {
+            size1: {
+                s: 'Підковдра 200 на 230. Простирадло 230 на 240. Наволочки 50 на 70 (2шт).',
+                inPack: 1,
+                packSize: 1,
+                salePack: 3,
+                price: 1650,
+                salePrice: 1520
+            }
+        }
+    },
+    {
+        id: 29,
+        category: 'Рушники',
+        imgMain: 'img/rushniki/18/rushnik.jpg',
+        img: [
+            'img/rushniki/18/rushnik.jpg',
+            'img/rushniki/18/rushnik_1.jpg',
+        ],
+        title: 'Рушник фібра,який одним рухом перетворюється на халатик.',
+        pack: false,
+        size: {
+            size1: {
+                s: '70X140',
+                inPack: 3,
+                packSize: 1, 
+                salePack: 10,
+                price: 170,
+                salePrice: 150
+            },
+        }
+    },
+    {
+        id: 30,
+        category: 'Пледи',
+        imgMain: 'img/pledy/6/pled_kids.jpg',
+        img: [
+            'img/pledy/6/pled_kids.jpg',
+            'img/pledy/6/pled_kids_1.jpg',
+        ],
+        title: 'Пледик дитячий.',
+        pack: false,
+        size: {
+            size1: {
+                s: '110X110',
+                inPack: 5,
+                packSize: 1, 
+                salePack: 10,
+                price: 200,
+                salePrice: 180
+            }
+        }
+    },
+    {
+        id: 31,
+        category: 'Покривала',
+        imgMain: 'img/pokrivalo/4/pokrivalo.jpg',
+        img: [
+            'img/pokrivalo/4/pokrivalo.jpg',
+            'img/pokrivalo/4/pokrivalo_1.jpg',
+        ],
+        title: "Покривало муслін.",
+        size: {
+            size1: {
+                s: '200X220',
+                inPack: 3,
+                packSize: 1, 
+                salePack: 3,
+                price: 820,
+                salePrice: 750
+            }
+        }
+    },
+    {
+        id: 32,
+        category: 'Рушники',
+        imgMain: 'img/rushniki/19/rushnik.webp',
+        img: [
+        ],
+        title: 'Махрові рушники.',
+        size: {
+            size1: {
+                s: '70X140',
+                inPack: 6,
+                packSize: 6, 
+                salePack: 3,
+                price: 170,
+                salePrice: 160
+            },
+            size2: {
+                s: '50X90',
+                inPack: 6,
+                packSize: 6, 
+                salePack: 3,
+                price: 85,
+                salePrice: 80
+            },
+        }
+    },
+    {
+        id: 32,
+        category: 'Покривала',
+        imgMain: 'img/pokrivalo/5/pokrivalo.jpg',
+        img: [
+            'img/pokrivalo/5/pokrivalo.jpg',
+            'img/pokrivalo/5/pokrivalo_1.jpg',
+        ],
+        title: "Плед-покривало фібра однотонка, з гарним стриженим малюнком.",
+        size: {
+            size1: {
+                s: '200X220',
+                inPack: 6,
+                packSize: 1,
+                salePack: 10,
+                price: 400,
+                salePrice: 380
+            }
         }
     },
 
