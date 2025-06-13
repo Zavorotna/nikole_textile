@@ -204,7 +204,7 @@ const products = [
         img: [
             // 'img/rushniki/3/rushnik.webp',
         ],
-        title: 'Кухонні рушники фібра.',
+        title: 'Кухонні рушники фібра "Кава-мальована".',
         pack: true,
         size: {
             size1: {
@@ -249,7 +249,7 @@ const products = [
         img: [
             // 'img/rushniki/3/rushnik.webp',
         ],
-        title: 'Рушники махрові.',
+        title: 'Рушники махрові."Бамбук"',
         pack: true,
         size: {
             size1: {
@@ -291,7 +291,7 @@ const products = [
         }
     },
     {
-        id: 12,
+        id: 34,
         category: 'Рушники',
         imgMain: 'img/rushniki/7/rushnik.webp',
         img: [
@@ -326,10 +326,10 @@ const products = [
             size1: {
                 s: '35X70',
                 inPack: 50,
-                packSize: 1, 
-                salePack: 100,
+                packSize: 50, 
+                salePack: 2,
                 price: 27,
-                salePrice: 25
+                salePrice: 25 
             },
         }
     },
@@ -400,7 +400,7 @@ const products = [
         imgMain: 'img/rushniki/10/rushnik.webp',
         img: [
         ],
-        title: 'Махрові рушники.',
+        title: 'Махрові рушники. "Вензель"',
         pack: true,
         size: {
             size1: {
@@ -453,7 +453,7 @@ const products = [
             'img/rushniki/12/rushnik_1.jpg',
             'img/rushniki/12/rushnik_2.jpg',
         ],
-        title: 'Рушники лицьові фібра.многим',
+        title: 'Рушники лицьові фібра.',
         pack: true,
         size: {
             size1: {
@@ -515,7 +515,7 @@ const products = [
             'img/rushniki/13/rushnik_8.jpg',
             'img/rushniki/13/rushnik_9.jpg',
         ],
-        title: 'Кухонні рушники фібра.',
+        title: 'Кухонні рушники фібра. "Фрукти і тістечка"',
         pack: true,
         size: {
             size1: {
@@ -534,7 +534,7 @@ const products = [
         imgMain: 'img/rushniki/14/rushnik.webp',
         img: [
         ],
-        title: 'Рушники махрові.',
+        title: 'Рушники махрові. "Букет"',
         pack: true,
         size: {
             size1: {
@@ -642,7 +642,7 @@ const products = [
         imgMain: 'img/rushniki/16/rushnik.webp',
         img: [
         ],
-        title: 'Кухонні рушники фібра.',
+        title: 'Кухонні рушники фібра. "Авокадо"',
         pack: true,
         size: {
             size1: {
@@ -819,7 +819,7 @@ const products = [
         }
     },
     {
-        id: 32,
+        id: 33,
         category: 'Покривала',
         imgMain: 'img/pokrivalo/5/pokrivalo.jpg',
         img: [
