@@ -25,7 +25,7 @@ function renderProductCard(product, index) {
     `).join('')
 
     const defaultSize = product.size[firstSizeKey]
-    console.log(defaultSize);
+    // console.log(defaultSize);
     return `
         <figure class="product-card" data-id="${product.id}" data-size="${firstSizeKey}">
             <figcaption>
@@ -160,7 +160,7 @@ let productsPerPage = 12
 
 function renderPage() {
     const start = 0,
-        productsToShow = products.slice(start, productsPerPage)
+        productsToShow = products.slice().reverse().slice(start, productsPerPage)
 
     displayProducts(productsToShow)
 
@@ -221,7 +221,7 @@ function renderCategoryFilters(products) {
             currentPage = 1
 
             const filtered = products.filter(p => p.category === category)
-            displayProducts(filtered.slice(0, productsPerPage))
+            displayProducts(filtered.slice().reverse().slice(0, productsPerPage))
 
             const btnMore = document.querySelector('#show-more-btn-prod')
             if (filtered.length > productsPerPage) {
@@ -229,7 +229,7 @@ function renderCategoryFilters(products) {
                 btnMore.onclick = (e) => {
                     e.preventDefault()
                     currentPage++
-                    displayProducts(filtered.slice(0, productsPerPage * currentPage))
+                    displayProducts(filtered.slice().reverse().slice(0, productsPerPage * currentPage))
                     if (filtered.length <= productsPerPage * currentPage) {
                         btnMore.style.display = 'none'
                     }
@@ -242,14 +242,14 @@ function renderCategoryFilters(products) {
 
     const initialCategory = 'Пледи',
         filtered = products.filter(p => p.category === initialCategory)
-    displayProducts(filtered.slice(0, productsPerPage))
+    displayProducts(filtered.slice().reverse().slice(0, productsPerPage))
 
     const btnMore = document.querySelector('#show-more-btn-prod')
     if (filtered.length > productsPerPage) {
         btnMore.style.display = 'flex'
         btnMore.onclick = () => {
             currentPage++
-            displayProducts(filtered.slice(0, productsPerPage * currentPage))
+            displayProducts(filtered.slice().reverse().slice(0, productsPerPage * currentPage))
             if (filtered.length <= productsPerPage * currentPage) {
                 btnMore.style.display = 'none'
             }
